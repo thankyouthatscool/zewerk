@@ -1,0 +1,13 @@
+{
+  "name": "zewerk",
+  "version": "1.0.0",
+  "repository": "https://github.com/thankyouthatscool/zewerk.git",
+  "author": "thankyouthatscool <85291297+thankyouthatscool@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*"
+    ]
+  }
+}
