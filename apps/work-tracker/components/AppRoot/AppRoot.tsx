@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { ScrollView, View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -35,7 +35,7 @@ export const AppRoot = () => {
     touchedDateInformation,
   } = useAppSelector(({ app }) => app);
 
-  const handleInitialLoad = async () => {
+  const handleInitialLoad = useCallback(async () => {
     dispatch(setIsLoading(true));
 
     db.transaction(
@@ -55,7 +55,7 @@ export const AppRoot = () => {
         dispatch(setIsLoading(false));
       }
     );
-  };
+  }, []);
 
   useEffect(() => {
     handleInitialLoad();
