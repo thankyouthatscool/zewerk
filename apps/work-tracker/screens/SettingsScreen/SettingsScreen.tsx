@@ -1,10 +1,25 @@
-import { View } from "react-native";
-import { Text } from "react-native-paper";
+import { FC } from "react";
+import { Button, Text } from "react-native-paper";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export const SettingsScreen = () => {
+import { DEFAULT_APP_PADDING } from "@theme";
+import { SettingsScreenNavProps } from "@types";
+
+export const SettingsScreen: FC<SettingsScreenNavProps> = ({
+  navigation,
+  route,
+}) => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>SettingsScreen</Text>
-    </View>
+      <Button
+        mode="contained"
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      >
+        Home
+      </Button>
+    </SafeAreaView>
   );
 };

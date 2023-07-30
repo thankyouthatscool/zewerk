@@ -1,5 +1,7 @@
 import type * as SQLite from "expo-sqlite";
 
+export * from "./nav";
+
 export type AppDefaults = {
   DEFAULT_COMMENT: string;
   DEFAULT_HOURLY_RATE: number;
