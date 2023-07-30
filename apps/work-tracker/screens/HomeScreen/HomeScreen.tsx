@@ -3,6 +3,7 @@ import { ScrollView, View } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { MonthCarousel } from "@components/MonthCarousel";
 import { useAppDispatch, useAppSelector } from "@hooks";
 import { setTouchedDateInformation } from "@store";
 import { HomeScreenNavProps } from "@types";
@@ -33,6 +34,7 @@ export const HomeScreen: FC<HomeScreenNavProps> = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <MonthCarousel />
       <ScrollView>
         <MainWrapper>
           <View>
