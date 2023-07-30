@@ -9,6 +9,7 @@ import {
   setIsLoading,
   setTouchedDateInformation,
 } from "@store";
+import { DEFAULT_APP_PADDING } from "@theme";
 import { DbMonthData } from "@types";
 import { createDefaultTableSQLString } from "@utils";
 
@@ -62,7 +63,7 @@ export const AppRoot = () => {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1, padding: 8 }}>
+    <SafeAreaView style={{ flex: 1, padding: DEFAULT_APP_PADDING }}>
       <ScrollView>
         <View>
           <View>
