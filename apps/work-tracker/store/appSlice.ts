@@ -7,6 +7,7 @@ import { getCurrentDateInformation } from "@utils";
 import {
   DEFAULT_COMMENT,
   DEFAULT_HOURLY_RATE,
+  DEFAULT_DAILY_HOURS,
   DEFAULT_WEEKLY_HOURS,
 } from "@constants";
 import {
@@ -32,6 +33,7 @@ const initialState: AppState = {
   appDefaults: {
     DEFAULT_COMMENT,
     DEFAULT_HOURLY_RATE,
+    DEFAULT_DAILY_HOURS,
     DEFAULT_WEEKLY_HOURS,
   },
   currentDateInformation: {
