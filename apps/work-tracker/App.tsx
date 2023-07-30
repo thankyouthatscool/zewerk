@@ -28,3 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 });
+
+/*
+  "startupActions": "split-pane -V; move-focus left; split-pane -H; move-focus right",
+*/
