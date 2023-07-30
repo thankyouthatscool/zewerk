@@ -3,31 +3,10 @@ export const getCurrentDateInformation = () => {
 
   const CURRENT_YEAR = dateInstance.getFullYear();
   const CURRENT_MONTH = dateInstance.getMonth();
-  const CURRENT_MONTH_LONG = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ][CURRENT_MONTH];
+  const CURRENT_MONTH_LONG = monthNameLookup(CURRENT_MONTH);
   const CURRENT_DATE = dateInstance.getDate();
   const CURRENT_WEEK_DAY = dateInstance.getDay();
-  const CURRENT_WEEK_DAY_LONG = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ][CURRENT_WEEK_DAY];
+  const CURRENT_WEEK_DAY_LONG = weekDayNameLookup(CURRENT_WEEK_DAY);
   const CURRENT_MONTH_NUMBER_OF_DAYS = new Date(
     CURRENT_YEAR,
     CURRENT_MONTH + 1,
@@ -55,4 +34,33 @@ export const getCurrentDateInformation = () => {
     CURRENT_MONTH_FIRST_DAY,
     CURRENT_MONTH_LAST_DAY,
   };
+};
+
+export const monthNameLookup = (monthNumber: number) => {
+  return [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ][monthNumber];
+};
+
+export const weekDayNameLookup = (dayNumber: number) => {
+  return [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ][dayNumber];
 };

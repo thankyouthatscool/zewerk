@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import * as SQLite from "expo-sqlite";
 
 import { getCurrentDateInformation } from "@utils";
@@ -82,6 +82,14 @@ export const appSlice = createSlice({
     setDbMonthData: (state, { payload }: PayloadAction<DbMonthData[]>) => {
       state.dbMonthData = payload;
     },
+    addDbMonthData: (state, { payload }: PayloadAction<DbMonthData>) => {
+      state.dbMonthData = [...state.dbMonthData, payload];
+    },
+    removeDbMonthData: (state, { payload }: PayloadAction<DbMonthData>) => {
+      state.dbMonthData = state.dbMonthData.filter(
+        (day) => day.dayId !== payload.dayId
+      );
+    },
   },
 });
 
@@ -97,4 +105,6 @@ export const {
 
   // Db Month Data
   setDbMonthData,
+  addDbMonthData,
+  removeDbMonthData,
 } = appSlice.actions;

@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { PaperProvider } from "react-native-paper";
 import { StyleSheet, View } from "react-native";
+import { PaperProvider } from "react-native-paper";
 import { Provider as ReduxProvider } from "react-redux";
 
 import { AppRoot } from "@components/AppRoot";

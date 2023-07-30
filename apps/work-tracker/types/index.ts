@@ -21,6 +21,8 @@ export type CurrentDateInformation = {
 export type DbMonthData = {
   dayId: string;
   monthId: string;
+  startTime?: string;
+  endTime?: string;
   hoursWorked: number[];
   hourlyRate: number[];
   comment: string;
