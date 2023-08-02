@@ -1,10 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { FC } from "react";
 import { useCallback, useEffect, useState } from "react";
-import { View } from "react-native";
-import { Button, Text, TextInput } from "react-native-paper";
+import { ScrollView, View } from "react-native";
+import { Button, Divider, Text, TextInput } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { ScreenHeader } from "@components/ScreenHeader";
 import { useAppSelector } from "@hooks";
 import { DEFAULT_APP_PADDING } from "@theme";
 import { AppDefaults, SettingsScreenNavProps } from "@types";
@@ -14,16 +15,16 @@ export const SettingsScreen: FC<SettingsScreenNavProps> = ({
   route,
 }) => {
   return (
-    <SafeAreaView>
-      <Button
-        mode="contained"
-        onPress={() => {
-          navigation.navigate("Home");
-        }}
-      >
-        Home
-      </Button>
-      <AppDefaultsSettingsSection />
+    <SafeAreaView style={{ height: "100%" }}>
+      <ScreenHeader title={"Settings"} />
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <AppDefaultsSettingsSection />
+          <Divider />
+          <ClearDataSettingsSections />
+          <Divider />
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
@@ -135,6 +136,14 @@ const AppDefaultsSettingsSection = () => {
           Save
         </Button>
       </View>
+    </View>
+  );
+};
+
+export const ClearDataSettingsSections = () => {
+  return (
+    <View style={{ padding: DEFAULT_APP_PADDING }}>
+      <Text variant="titleLarge">Clear Data</Text>
     </View>
   );
 };

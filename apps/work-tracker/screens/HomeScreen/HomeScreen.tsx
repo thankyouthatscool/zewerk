@@ -33,10 +33,16 @@ export const HomeScreen: FC<HomeScreenNavProps> = ({ navigation, route }) => {
   } = useAppSelector(({ app }) => app);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+        justifyContent: "center",
+      }}
+    >
       <MonthCarousel />
-      <ScrollView>
-        <MainWrapper>
+      {/* <ScrollView> */}
+      {/* <MainWrapper>
           <View>
             <View>
               <Text variant="titleLarge">Is Currently Loading</Text>
@@ -121,8 +127,8 @@ export const HomeScreen: FC<HomeScreenNavProps> = ({ navigation, route }) => {
           >
             Settings
           </Button>
-        </MainWrapper>
-      </ScrollView>
+        </MainWrapper> */}
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 };

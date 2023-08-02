@@ -72,6 +72,16 @@ export const appSlice = createSlice({
       state.appDefaults = payload;
     },
 
+    // Current Date Information
+    setCurrentDateInformation: (state, { payload }: PayloadAction<any>) => {
+      console.log(payload);
+    },
+
+    // Selected Date Information
+    setSelectedDateInformation: (state, { payload }: PayloadAction<any>) => {
+      console.log(payload);
+    },
+
     // Touched Date Information
     setTouchedDateInformation: (
       state,
@@ -96,11 +106,17 @@ export const appSlice = createSlice({
 });
 
 export const {
-  // Is Loading
+  // Loading
   setIsLoading,
 
   // App Defaults
   setAppDefaults,
+
+  // Current Date Information
+  setCurrentDateInformation,
+
+  // Selected Date Information
+  setSelectedDateInformation,
 
   // Touched Date Information
   setTouchedDateInformation,
